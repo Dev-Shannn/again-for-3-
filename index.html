@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>For You</title>
+  </head>
+  <body>
+    <div class="app-container">
+      <h1>For You</h1>
+
+      <form id="poem-generator-form">
+        <input
+          type="text"
+          class="text-input"
+          id="user-input"
+          placeholder="Enter your name"
+          autocomplete="off"
+          required
+        />
+        <input type="submit" value="Generate Poem" class="submit-button" />
+      </form>
+
+
+      <div class="poem hidden" id="poem"></div>
+
+      <footer>
+        Coded by Nishant
+      </footer>
+
+      <!-- 🎵 Background Music -->
+      <audio id="bg-music" src="your-music.mp3" loop autoplay muted></audio>
+      <button id="toggle-music" class="music-button">🎵</button>
+    </div>
+
+    <script src="app.js"></script>
+
+    <script>
+      // Unmute music on first user interaction
+      document.addEventListener("click", () => {
+        const audio = document.getElementById("bg-music");
+        audio.muted = false;
+        audio.play().catch((err) => console.log("Autoplay blocked", err));
+      });
+
+      // Play/Pause Button
+      const audio = document.getElementById("bg-music");
+      const btn = document.getElementById("toggle-music");
+      btn.addEventListener("click", () => {
+        if (audio.paused) {
+          audio.play();
+          btn.textContent = "⏸️";
+        } else {
+          audio.pause();
+          btn.textContent = "🎵";
+        }
+      });
+    </script>
+  </body>
+</html>

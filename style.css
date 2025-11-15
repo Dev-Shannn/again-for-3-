@@ -1,0 +1,179 @@
+body {
+  background: radial-gradient(
+    circle at 5.3% 17.2%,
+    rgb(255, 208, 253) 0%,
+    rgb(255, 237, 216) 90%
+  );
+}
+
+h1,
+form,
+footer,
+.hint {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400;
+}
+
+h1,
+form,
+footer {
+  text-align: center;
+}
+
+footer,
+.poem,
+.text-input {
+  color: #4d4b4b;
+}
+
+.submit-button,
+.text-input,
+.poem {
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1,
+a {
+  color: #f91297;
+}
+
+h1,
+.hint {
+  text-shadow: 2px 3px 10px rgba(104, 88, 104, 0.3);
+}
+
+a,
+.submit-button {
+  transition: all 150ms ease-in-out;
+}
+
+.submit-button,
+.text-input {
+  border: 1px solid #f91297;
+  border-radius: 30px;
+  font-size: 15px;
+}
+
+.app-container,
+.poem {
+  margin-top: 30px;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+footer {
+  margin-top: 50px;
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.app-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.text-input {
+  width: 72%;
+  padding: 15px 20px;
+}
+
+.text-input:focus {
+  outline-color: #4d4b4b;
+}
+
+.submit-button {
+  padding: 14px 20px;
+  color: #fff;
+  background: #f91297;
+}
+
+.submit-button:hover {
+  background: #fff;
+  color: #f91297;
+  cursor: pointer;
+}
+
+.hint {
+  color: #685868;
+  font-size: 14px;
+  margin: 7px;
+}
+
+.poem {
+  font-family: "Delius Swash Caps", cursive;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 29px;
+  border-left: 3px solid #f91297;
+  border-radius: 7px;
+  background-color: #fff;
+  line-height: 2;
+}
+
+.hidden {
+  display: none;
+}
+
+.blink {
+  animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* Music Button Styling */
+.music-button {
+  position: fixed;
+  bottom: 300px; /* Increased distance from the bottom */
+  left: 50%;
+  transform: translateX(-50%);
+
+  font-size: 30px;
+  padding: 20px;
+  background-color: rgba(255, 105, 180, 0.9);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;
+
+  box-shadow: 0 0 18px rgba(255, 105, 180, 0.8);
+  backdrop-filter: blur(10px);
+  transition: 0.3s ease;
+}
+
+.music-button:hover {
+  transform: translateX(-50%) scale(1.15);
+}
+
+/* Mobile Friendly */
+@media (max-width: 480px) {
+  .music-button {
+    bottom: 80px; /* Extra space on mobile where footer is closer */
+    font-size: 26px;
+    padding: 16px;
+  }
+}
